@@ -34,14 +34,13 @@ public class FirstFragment extends Fragment {
             public void onClick(View view) {
                 //все должен запомнить
                 Bundle bundle = new Bundle();
-                if (editTextTime.getText().toString().isEmpty()){
-
-                } else {
+                if (!editTextTime.getText().toString().isEmpty()) {
                     bundle.putString("key", editTextTime.getText().toString());
                     SecondFragment fragment = new SecondFragment();
                     fragment.setArguments(bundle);
-                    requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container,fragment).addToBackStack("").commit();
+                    requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).addToBackStack("").commit();
                     //конец
+
                 }
             }
         });
