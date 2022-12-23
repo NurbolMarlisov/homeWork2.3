@@ -27,8 +27,15 @@ public class FirstFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        idText();
+       onClick();
+
+    } void idText(){
         editTextTime = requireActivity().findViewById(R.id.editTextTime);
         button_one = requireActivity().findViewById(R.id.button_one);
+    }
+
+    void onClick(){
         button_one.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,7 +47,6 @@ public class FirstFragment extends Fragment {
                     fragment.setArguments(bundle);
                     requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).addToBackStack("").commit();
                     //конец
-
                 }
             }
         });
